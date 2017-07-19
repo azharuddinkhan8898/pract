@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Colors</title>
+  <script src="jquery-3.1.1.min.js"></script>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li {
+    display: inline-block;
+    float: left;
+    height: 500px;
+    width: 20%;
+  }
+  
+  .lockedbtn {
+    background: red;
+  }
+  </style>
+  <script>
+  $(document).ready(function() {
+
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+
+      for (var j = 1; j < 6; j++) {
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        console.log(color);
+        $("ul li:nth-child(" + j + "):not(.locked)").css("background", color);
+      }
+
+
+    }
+    $(document).keypress(function(e) {
+    	console.log(e)
+      var key = e.keyCode;
+      if (key == 32) {
+        getRandomColor();
+        return false;
+      }
+    });
+    $("ul li button").click(function() {
+      $(this).parent().toggleClass("locked");
+      $(this).toggleClass("lockedbtn");
+    });
+    getRandomColor();
+  });
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li class="1">
+      <button>lock</button>
+    </li>
+    <li class="2">
+      <button>lock</button>
+    </li>
+    <li class="3">
+      <button>lock</button>
+    </li>
+    <li class="4">
+      <button>lock</button>
+    </li>
+    <li class="5">
+      <button>lock</button>
+    </li>
+  </ul>
+</body>
+
+</html>

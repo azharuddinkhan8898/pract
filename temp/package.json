@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "this is for test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Azhar",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.4",
+    "jquery": "^3.2.1",
+    "style-loader": "^0.18.2"
+  }
+}

@@ -1,0 +1,29 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+<script>
+
+	var items=[2,5,8,4,7,3,1,6,9];
+	// var length = items.length;
+	// 	for(i=length-1; i>=0; i--){
+	// 		for(j=length - i; j>0; j--){
+	// 			if(items[j]<items[j-1]){
+	// 				var temp=items[j];
+	// 				items[j]=items[j-1];
+	// 				items[j-1]=temp;
+	// 			}
+	// 		}
+	// 	}
+    items.sort(function(a,b){
+    	return (a-b);
+    });
+    console.log(items);
+</script>
+</body>
+</html>

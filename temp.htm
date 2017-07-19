@@ -1,0 +1,28 @@
+<html>
+
+<body>
+  <script language="javascript" type="text/javascript">
+  function hello() {
+    var answer;
+    answer = confirm("Do you want to continue?");
+    var msg;
+    if (answer) {
+      msg = "OK, you want to continue";
+    } else {
+      //msg = "You DO NOT want to continue";
+      return;
+    }
+    alert(msg);
+    answer = prompt("Enter a answer");
+    if (answer == 100) {
+      msg = "you entered 100";
+    } else {
+      msg = "you didnt enter 100";
+    }
+    alert(msg);
+  }
+  hello();
+  </script>
+</body>
+
+</html>

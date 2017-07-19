@@ -1,0 +1,92 @@
+<ul>
+  <li>4</li>
+  <li>2</li>
+  <li>3</li>
+  <li>5</li>
+  <li>1</li>
+  <li>6</li>
+  <li>9</li>
+  <li>8</li>
+  <li>7</li>
+  <li>10</li>
+</ul>
+<br>
+<!-- <button class="prvs">prvs</button> -->
+<button class="Next">Next</button>
+
+
+
+
+
+
+
+
+var first = {
+  number: 1
+};
+var second = {
+  number: 2
+};
+console.log(second.number);
+$("ul li:nth-child(" + first.number + "), ul li:nth-child(" + second.number + ")").css("font-weight", "bold");
+$("button.Next").click(function() {
+  if (parseInt($("ul li:nth-child(" + first.number + ")").text()) > parseInt($("ul li:nth-child(" + second.number + ")").text())) {
+
+    var text1 = $("ul li:nth-child(" + first.number + ")").text();
+    var text2 = $("ul li:nth-child(" + second.number + ")").text();
+
+    var temp;
+    temp = text2;
+
+    text2 = text1;
+    text1 = temp;
+    $("ul li:nth-child(" + first.number + ")").text(text1);
+    $("ul li:nth-child(" + second.number + ")").text(text2);
+  }
+  first.number++;
+  second.number++;
+  if (second.number > 10) {
+    first.number = 1;
+    second.number = 2;
+  }
+  $("ul li").css("font-weight", "normal");
+  $("ul li:nth-child(" + first.number + "), ul li:nth-child(" + second.number + ")").css("font-weight", "bold");
+
+});
+$(".prvs").click(function() {
+	if (parseInt($("ul li:nth-child(" + first.number + ")").text()) < parseInt($("ul li:nth-child(" + second.number + ")").text())) {
+
+    var text1 = $("ul li:nth-child(" + first.number + ")").text();
+    var text2 = $("ul li:nth-child(" + second.number + ")").text();
+
+    var temp;
+    temp = text2;
+
+    text2 = text1;
+    text1 = temp;
+    $("ul li:nth-child(" + first.number + ")").text(text1);
+    $("ul li:nth-child(" + second.number + ")").text(text2);
+  }
+  first.number--;
+  second.number--;
+  if (second.number > 1) {
+    first.number = 9;
+    second.number = 10;
+  }
+  $("ul li").css("font-weight", "normal");
+  $("ul li:nth-child(" + first.number + "), ul li:nth-child(" + second.number + ")").css("font-weight", "bold");
+});
+
+
+
+
+
+
+
+
+ul li {
+  list-style-type: none;
+  float: left;
+  margin-left: 10px;
+}
+
